@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diamond Predict</title>
+<style>
+body{font-family:Arial;background:#0f0f1a;color:white;text-align:center;padding:15px}
+.card{background:#1e1e35;padding:18px;border-radius:15px;margin:12px 0}
+input,select{width:92%;padding:12px;margin:8px;border-radius:10px;border:none}
+button{padding:12px 18px;border:none;border-radius:10px;background:gold;color:black;font-weight:bold;margin:5px}
+.hidden{display:none}
+.paybox{background:yellow;color:black;padding:15px;border-radius:12px;font-weight:bold}
+img{max-width:100%;border-radius:10px;margin-top:10px}
+.aiBox{background:#222;padding:12px;border-radius:10px;margin-top:10px}
+</style>
+</head>
+<body>
+<h1>💎 Diamond Predict</h1>
+<p>Predict Instant Virtual & Win Diamonds!</p>
+
+<!-- SIGNUP -->
+<div id="signup" class="card">
+<h2>Create Account</h2>
+<input id="name" placeholder="Full Name">
+<input id="phone" placeholder="Your Phone Number">
+<input id="pass" type="password" placeholder="Create Password">
+<button onclick="signup()">Create Account</button>
+<br><button onclick="showAdmin()">Admin Login</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="card hidden">
+<h2>Hi <span id="uname"></span></h2>
+<p>💎 Your Diamonds: <b id="diamonds">0</b> | Status: <b id="pstatus">No Payment</b></p>
+
+<h3>1. Buy Diamond</h3>
+<div class="paybox">
+Send to:<br>0507094276<br>TELECEL<br>FUSEINI ADAMS
+</div>
+<p>Select Package:</p>
+<select id="pkg">
+<option value="200">200 GH₵ = 200 💎</option>
+<option value="500">400 GH₵ = 500 💎</option>
+<option value="800">600 GH₵ = 800 💎</option>
+<option value="1000">800 GH₵ = 1000 💎</option>
+<option value="1500">1000 GH₵ = 1500 💎</option>
+</select>
+<input id="txid" placeholder="Transaction ID from SMS">
+<p>Upload Payment Screenshot</p>
+<input type="file" id="shot" accept="image/*">
+<button onclick="submitPay()">Submit Payment For Approval</button>
+<p id="msg"></p>
+
+<h3>🤖 2. AI Prediction - Upload Screenshot</h3>
+<p>Upload Instant Virtual Screenshot. AI will pick BEST 2.</p>
+<input type="file" id="aiShot" accept="image/*">
+<button onclick="analyzeAI()">Analyze With AI</button>
+<div id="aiResult" class="aiBox">No analysis yet. Upload screenshot.</div>
+
+<h3>3. Instant Virtual Prediction</h3>
+<p>Cost:

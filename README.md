@@ -1,2 +1,0 @@
-# Sporty-games-
-Buy diamond 
